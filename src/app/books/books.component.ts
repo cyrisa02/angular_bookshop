@@ -16,12 +16,7 @@ export class BooksComponent implements OnInit {
 
   }
 
-
-  card: Book[] = [];
-
   isShowing: boolean = true;
-
-
 
   ngOnInit(): void {
     this.books = this.booksService.getBooks()
@@ -33,9 +28,6 @@ export class BooksComponent implements OnInit {
     this.isShowing = !this.isShowing;
   }
 
-  addToCard(book: Book) {
-
-  }
 
 
 }
