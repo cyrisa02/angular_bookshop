@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Book } from '../types/Books';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Book } from '../types/Book';
 
 @Component({
   selector: 'app-book',
@@ -8,10 +8,20 @@ import { Book } from '../types/Books';
 })
 export class BookComponent implements OnInit {
   @Input() book: Book = {} as Book;
+  @Output() bookEmitter = new EventEmitter<Book>();
+
+  myInterval = null;
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+
+  addToCard() {
+    this.bookEmitter.emit(this.book);
+
   }
 
 }

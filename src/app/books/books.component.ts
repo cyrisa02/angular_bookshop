@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Book } from '../types/Books';
+import { Book } from '../types/Book';
 
 
 
@@ -48,7 +48,7 @@ export class BooksComponent implements OnInit {
 
   ];
 
-
+  card: Book[] = [];
 
   isShowing: boolean = true;
 
@@ -57,8 +57,14 @@ export class BooksComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
   toggeBooks() {
     this.isShowing = !this.isShowing;
+  }
+
+  addToCard(book: Book) {
+
   }
 
 
