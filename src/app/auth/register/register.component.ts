@@ -15,12 +15,17 @@ export class RegisterComponent implements OnInit {
   }
 
   passwordMatched: boolean = true;
+  isLoading: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
   submit() {
+    if (this.isLoading) return;
+
+    this.isLoading = true;
+
     if (this.form.password != this.form.confirm_password) {
       this.passwordMatched = false;
       return;
@@ -35,6 +40,6 @@ export class RegisterComponent implements OnInit {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
-      });
+      }).finally(() => (this.isLoading = false));
   }
 }
