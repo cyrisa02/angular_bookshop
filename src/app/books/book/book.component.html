@@ -1,9 +1,11 @@
-<li class="book">
+<li class="book" class="my-4">
   <img [src]="book.image" [alt]="book.name" width="100" />
-  <p class="title">
+  <p class="title" class="text-center text-xl">
     {{ book.name | titlecase }} by {{ book.author | titlecase }}
   </p>
-  <p classe="currency">Price: {{ book.amount | currency: "EUR" }}</p>
+  <p classe="currency" class="text-center text-xl">
+    Price: {{ book.amount | currency: "EUR" }}
+  </p>
   <button
     *ngIf="!isInCart"
     (click)="addToCart()"
